@@ -5,15 +5,14 @@ import UML_UseCase as uc
 
 # Function to print the summary of a use case
 def print_use_case_summary(use_case: uc.UML_UseCase):
-    print(f"Use Case: {use_case.name}")
-    print(f"Description: {use_case.desc}")
+    print(f"Use Case: {use_case.name}: {use_case.desc}")
     print("Use Case Functions:")
     for f in use_case.use_case_functions:
-        print(f"  - Function: {f.name}")
-        print(f"    Description: {f.desc}")
-        print("    Actors:")
+        print(f"...{f.name}: {f.desc}")
+        print("...Actors:", end=", ")
         for a in f.actors:
-            print(f"      * Type: {a.type}, Description: {a.desc}")
+            print(f"{a.desc}", end=", ")
+        print("\n")    
     print("\n")
 
 #Function to print use case functions by actor
