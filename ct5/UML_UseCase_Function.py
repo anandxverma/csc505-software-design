@@ -1,8 +1,8 @@
-import Actor as actor
+import UML_Actor as actor
 
 # This class represents a use case function in the UML Framework
 
-class UseCaseFunction:
+class UML_UseCase_Function:
     # Initialize the class with default values
     def __init__(self, name, desc):
         self.__name = name
@@ -26,13 +26,13 @@ class UseCaseFunction:
         self.__desc = desc
 
     # Add actor to the use case function
-    def add_actor(self, actor: actor.Actor):
+    def add_actor(self, actor: actor.UML_Actor):
         self.__actors.append(actor)
 
     # Getter and setter for actors
     @property
-    def actors(self) -> list[actor.Actor]:
+    def actors(self) -> list[actor.UML_Actor]:
         return self.__actors
     @actors.setter
-    def actors(self, actors: list[actor.Actor]):
+    def actors(self, actors: list[actor.UML_Actor]):
         self.__actors = actors

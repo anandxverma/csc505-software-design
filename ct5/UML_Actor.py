@@ -1,6 +1,6 @@
 # This class represents an actor in the UML Framework
 
-class Actor:
+class UML_Actor:
     # Initialize the class with default values
     def __init__(self, type, desc):
         self.__type = type
