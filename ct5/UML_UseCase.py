@@ -36,3 +36,13 @@ class UML_UseCase:
     @use_case_functions.setter
     def use_case_functions(self, use_case_functions: list[ucf.UML_UseCase_Function]):
         self.__use_case_functions = use_case_functions
+
+    # Function to find all use case functions involving a specific actor
+    def find_use_case_functions_by_actor(self, actor_desc) -> list[ucf.UML_UseCase_Function]:
+        result = []
+        for func in self.__use_case_functions:
+            for actor in func.actors:
+                if actor.desc.upper() == actor_desc.upper():
+                    result.append(func)
+                    break
+        return result

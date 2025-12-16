@@ -16,6 +16,13 @@ def print_use_case_summary(use_case: uc.UML_UseCase):
             print(f"      * Type: {a.type}, Description: {a.desc}")
     print("\n")
 
+#Function to print use case functions by actor
+def print_use_case_functions_by_actor(use_case: uc.UML_UseCase, actor_desc: str):
+    print(f"Use Case: {use_case.name} involving Actor: {actor_desc}")
+    func = use_case.find_use_case_functions_by_actor(actor_desc)
+    for f in func:
+        print(f"{f.name}")
+
 # Define actors for the Citizen use case
 actor_citizen = actor.UML_Actor(constants.ACTOR_TYPE_USER, "Citizen")
 actor_pothole_damage_report = actor.UML_Actor(constants.ACTOR_TYPE_ENTITY, "Pothole Damage Report")
@@ -48,9 +55,6 @@ uc_citizen.add_use_case_function(ucf_citizen_1)
 uc_citizen.add_use_case_function(ucf_citizen_2)
 uc_citizen.add_use_case_function(ucf_citizen_3)
 uc_citizen.add_use_case_function(ucf_citizen_4)
-
-# Print the summary of the Citizen use case
-print_use_case_summary(uc_citizen)
 
 # Define actors for the Admin use case
 actor_admin = actor.UML_Actor(constants.ACTOR_TYPE_USER, "Public Works Admin")
@@ -101,9 +105,6 @@ uc_admin.add_use_case_function(ucf_admin_4)
 uc_admin.add_use_case_function(ucf_admin_5)
 uc_admin.add_use_case_function(ucf_admin_6)
 
-# Print the summary of the Citizen use case
-print_use_case_summary(uc_admin)
-
 # Define use case functions for the Repair use case
 # use Case Function = Update Work Order
 ucf_repair_crew_1 = ucf.UML_UseCase_Function("Update Work Order", "Update Work Order (Update Status, Notes etc)")
@@ -120,5 +121,30 @@ uc_repair_crew = uc.UML_UseCase("Repair Crew Specific Use Cases", "These use cas
 uc_repair_crew.add_use_case_function(ucf_repair_crew_1)
 uc_repair_crew.add_use_case_function(ucf_repair_crew_2)
 
-# Print the summary of the Citizen use case
+# Print the summary of all use cases
+print_use_case_summary(uc_citizen)
+print_use_case_summary(uc_admin)
 print_use_case_summary(uc_repair_crew)
+print("*"*60)
+print()
+
+# Print the summary of use cases by actors
+print_use_case_functions_by_actor(uc_citizen, "Citizen")
+print("*"*60)
+print()
+print_use_case_functions_by_actor(uc_admin, "Public Works Admin")
+print("*"*60)
+print()
+print_use_case_functions_by_actor(uc_admin, "Citizen")
+print("*"*60)
+print()
+print_use_case_functions_by_actor(uc_admin, "Repair Crew")
+print("*"*60)
+print()
+print_use_case_functions_by_actor(uc_repair_crew, "Repair Crew")
+print("*"*60)
+print()
+print_use_case_functions_by_actor(uc_repair_crew, "Citizen")
+print("*"*60)
+print()
+print_use_case_functions_by_actor(uc_repair_crew, "Public Works Admin")
