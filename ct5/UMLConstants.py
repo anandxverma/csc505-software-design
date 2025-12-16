@@ -1,0 +1,4 @@
+# Constants for Actor types
+ACTOR_TYPE_USER = "User"
+ACTOR_TYPE_ENTITY = "ENTITY"
+ACTOR_TYPE_SYSTEM = "SYSTEM"
