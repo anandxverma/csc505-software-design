@@ -19,10 +19,11 @@ SIGNATURE: anglicize(n: int) -> str
 INPUT: An integer between 0 and 999,999
 OUTPUT: Anglicised format of the input number
 EXCEPTIONS:
-- Number Out of Range for numbers outside the 0 to 999,999
-- Invalid Input Value for invalid values, such as strings or alphanumeric values
+    - Number Out of Range for numbers outside the 0 to 999,999
+    - Invalid Input Value for invalid values, such as strings or alphanumeric values
+EXAMPLE: anglicize(123)
 ASSUMPTIONS:
-- The input value is an integer between 0 to 999,999.
+    - The input value is an integer between 0 to 999,999.
 
 ************************************************
 FUNCTION: Anglicize Amount
@@ -36,6 +37,7 @@ SPECIFICATIONS
 SIGNATURE: anglicize_amount(n: float) -> str
 INPUT: A float between 0 and 999,999
 OUTPUT: Anglicised format of the input amount
+EXAMPLE: anglicize_amount(123.75)
 EXCEPTIONS:
 - Amount Out of Range for values outside the 0 to 999,999
 - Invalid Input Value for invalid values, such as strings or alphanumeric values
