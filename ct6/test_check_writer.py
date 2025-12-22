@@ -69,7 +69,7 @@ except Exception as e:
     print(f"Amount: {amt} --> Error: {e}\n")
 
 try:
-    amt = "A string value"
+    amt = "One Thousand Dollars"
     print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
 except Exception as e:
     print(f"Amount: {amt} --> Error: {e}\n")
