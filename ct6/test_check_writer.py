@@ -1,10 +1,75 @@
 import check_writer as chkw
 
+print()
 # Test cases for anglicize_amount function
-print(chkw.anglicize_amount(100))
-print(chkw.anglicize_amount(0.50))
-print(chkw.anglicize_amount(245.50))
-print(chkw.anglicize_amount(1500.00))
-print(chkw.anglicize_amount(34256.33))
-print(chkw.anglicize_amount(0.00))
-print(chkw.anglicize_amount(903400.077))
+try:
+    amt = 0.00
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 0.5
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 11.95
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 45
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 100
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 245.75
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 1500
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 34256.33
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 903400.077
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = -5.00
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = 1000000
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
+
+try:
+    amt = "A string value"
+    print(f"Amount: {amt} --> {chkw.anglicize_amount(amt)}\n")
+except Exception as e:
+    print(f"Amount: {amt} --> Error: {e}\n")
