@@ -17,3 +17,7 @@ At a high level, the changes include fixing the overall implementation of the Bu
 2. DeveloperBuilderDirector Class
 
 - Updated the method calls to align with changes in the DeveloperBuilder class.
+
+3. Class Diagram
+
+- Updated the class diagram to reflect the changes in the Python Classes.
