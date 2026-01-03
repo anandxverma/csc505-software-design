@@ -16,14 +16,6 @@ class DeveloperBuilder(DeveloperBuilderAbstract):
     def get_developer(self) -> developer.Developer:
         return self.__developer
 
-    #def set_name(self, name: str):
-    #    self.__developer.name = name
-    #    return self
-
-    #def set_experience_level(self, experience_level: str):
-    #    self.__developer.experience_level = experience_level
-    #    return self
-
     def add_trait_responsibility(self):
         self.__developer.trait_responsibility = trait.Trait(trait.Trait.RESPONSIBILITY, trait.Trait.RESPONSIBILITY_DESC)
         return self

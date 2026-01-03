@@ -1,0 +1,19 @@
+************************************************
+CHANGES
+************************************************
+
+At a high level, the changes include fixing the overall implementation of the Builder-Director pattern. Here is the list of changes:
+
+1. DeveloperBuilder Class
+
+- Added a build() method to construct the Developer object matching the Builder-Director pattern. The method takes the developer's name and experience level as input parameters to create a Developer class object.
+
+- DeveloperBuilder Class - Removed the set_name() and set_experience_level() methods enforcing that these parameters are confined to the build() method.
+
+- Added validations for name and experience level parameters.
+
+- Improved the add_traits_<trait_name>() methods for setting consistent trait values
+
+2. DeveloperBuilderDirector Class
+
+- Updated the method calls to align with changes in the DeveloperBuilder class.
