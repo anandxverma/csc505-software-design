@@ -1,7 +1,6 @@
 # This class represents an Abstract Builder for defining the behavious of a DeveloperBuilder
 
 from abc import ABC, abstractmethod
-import Trait as trait
 import Developer as developer
 
 class DeveloperBuilderAbstract(ABC):
@@ -12,40 +11,45 @@ class DeveloperBuilderAbstract(ABC):
         pass
 
     # Abstract method to set the name of the Developer
-    @abstractmethod
-    def set_name(self, name: str):
-        pass
+#    @abstractmethod
+#    def set_name(self, name: str):
+#        pass
 
     # Abstract method to set the experience level of the Developer
-    @abstractmethod
-    def set_experience_level(self, experience_level: str):
-        pass
+#    @abstractmethod
+#    def set_experience_level(self, experience_level: str):
+#        pass
 
     # Abstract methods to add each of the Developer Traits
     @abstractmethod
-    def add_trait_responsibility(self, trait: trait.Trait):
+    def add_trait_responsibility(self):
         pass
 
     @abstractmethod
-    def add_trait_awareness(self, trait: trait.Trait):
+    def add_trait_awareness(self):
         pass
 
     @abstractmethod
-    def add_trait_honesty(self, trait: trait.Trait):
+    def add_trait_honesty(self):
         pass
 
     @abstractmethod
-    def add_trait_resiliency(self, trait: trait.Trait):
+    def add_trait_resiliency(self):
         pass
 
     @abstractmethod
-    def add_trait_fairness(self, trait: trait.Trait):
+    def add_trait_fairness(self):
         pass
 
     @abstractmethod
-    def add_trait_attention_to_detail(self, trait: trait.Trait):
+    def add_trait_attention_to_detail(self):
         pass
 
     @abstractmethod
-    def add_trait_pragmatism(self, trait: trait.Trait):
+    def add_trait_pragmatism(self):
+        pass
+
+    # Abstract method to build the Developer with provided name and experience level
+    @abstractmethod
+    def build(self, name: str, experience_level: str):
         pass
