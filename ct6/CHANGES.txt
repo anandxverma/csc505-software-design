@@ -1,0 +1,15 @@
+************************************************
+CHANGES
+************************************************
+
+------------------------------------------------
+DATE: 01/02/2025
+------------------------------------------------
+
+1. check_writer.py Module
+
+- Added a anglicize_dollar(amount: int) method to abstract the logic of converting the Dollar value into words.
+
+- Added a anglicize_cent(amount: int) method to abstract the logic of converting the Cent value into words.
+
+- Updated the anglicize_amount() method to replace the lines of codes for Dollar and Cents conversion with their respective methods.

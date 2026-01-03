@@ -32,6 +32,12 @@ def anglicize(n: int) -> str:
     else:
         return anglicize(n // 1000) + ' Thousand' + ('' if n % 1000 == 0 else ' ' + anglicize(n % 1000))
 
+def anglicize_dollars(amount: int) -> str:
+    return f"{anglicize(amount)} Dollars"
+
+def anglicize_cents(amount: int) -> str:
+    return f"{anglicize(amount)} Cents"
+
 # This function anglicizes a float amount between $0.00 and $999,999.99
 def anglicize_amount(amount: float) -> str:
     # Check for valid input
@@ -50,10 +56,10 @@ def anglicize_amount(amount: float) -> str:
         raise ValueError(f"{amount} is out of range")
     # Handle zero amount
     elif (amount == 0):
-        return f"{anglicize(dollars)} Dollars"
+        return anglicize_dollars(int(amount))
     # Handle amounts with only cents
     elif (dollars == 0):
-        return f"{anglicize(cents) + ' Cents'}"
-    # Handle amounts with dollars and cents
+        return anglicize_cents(cents)
+    # Handle amounts with both dollars and cents
     else:
-        return f"{anglicize(dollars) + ' Dollars'} {'' if (cents == 0) else 'And ' + anglicize(cents) + ' Cents'}"
+        return f"{anglicize_dollars(dollars)} {'' if (cents == 0) else 'And ' + anglicize_cents(cents)}"
