@@ -1,8 +1,8 @@
-def atm_simulation():
+def atm_simulation(card_number):
     print("--- ATM Transaction Start ---")
     
     # Step 1: Accept Debit Card Details
-    print("\n[Step] Accepting Debit Card Details...")
+    print(f"\n[Step] Accepting Debit Card Details for card: {card_number}")
     
     # Step 2: Validate Card Details
     print("[Step] Validating Card Details...")
@@ -100,4 +100,7 @@ def atm_simulation():
         
         print("\n[Info] Returning to Action List...")
 
-atm_simulation()
+card_number = input("Enter Debit Card Number to start ATM simulation or press enter to choose 1111-2222-3333-4444: ").strip()
+if not card_number:
+    card_number = "1111-2222-3333-4444"
+atm_simulation(card_number)

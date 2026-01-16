@@ -113,7 +113,7 @@ def simulate_atm(debit_card_number):
     print_step("Session Ended")
     print("--- SIMULATION COMPLETE ---")
 
-card_number = input("Enter Debit Card Number to start ATM simulation or press enter to chose 1111-2222-3333-4444: ").strip()
+card_number = input("Enter Debit Card Number to start ATM simulation or press enter to choose 1111-2222-3333-4444: ").strip()
 if not card_number:
     card_number = "1111-2222-3333-4444"
 simulate_atm(card_number)
