@@ -33,40 +33,41 @@ def simulate_atm(debit_card_number):
     print_step("Debit Card Validated Successfully")
 
     # 3. PIN Entry Loop
-    pin_counter = 0
+    pin_counter = 1
     max_tries = 3
     pin_validated = False
 
     while not pin_validated:
-        print_step("Accept Pin & Increment Pin Counter by 1")
-        pin_counter += 1
-        print(f"    (Attempt {pin_counter} of {max_tries})")
-        
+        print(f"\n[Step] Please enter your PIN (Attempt {pin_counter}/{max_tries}).")
+        _ = input("Input: Enter 4-digit PIN: ") # Variable nt used, just simulating input
+
         print_step("Validate ATM Pin")
         
         # In a real app, we'd compare numbers. Here we ask the user to simulate the backend check.
-        is_pin_valid = get_user_decision("Is the entered PIN valid?")
+        print("[Step] Validating PIN...")
+        is_pin_valid = input("Decision: Is the PIN correct? (y/n): ").strip().lower()
 
-        if is_pin_valid:
+        if is_pin_valid == 'y':
             pin_validated = True
             print_step("ATM Pin Validated")
         else:
-            print_step("ATM Pin Invalid")
-            print_step("Check Pin Counter")
-            
+            print_step("ATM Pin Invalid")            
             if pin_counter >= max_tries:
                 print_step("Reached Max Tries? -> YES")
                 print_step("Session Ended")
                 return # Exit simulation
             else:
-                print_step("Reached Max Tries? -> NO")
-                # Loops back to Accept Pin
+                # "Increment Pin Counter by 1"
+                print("[Info] Incorrect PIN. Please try again.")
+                pin_counter += 1
     
     # 4. Main Transaction Loop
     session_active = True
     
     while session_active:
         print_step("List of Actions Displayed")
+        print("1. Withdrawal")
+        print("2. Check Balance (Other Action)")
         
         # Decision: Withdrawal or Other?
         # The diagram focuses on Withdrawal, so we ask specifically about that.
@@ -86,8 +87,15 @@ def simulate_atm(debit_card_number):
             transaction_successful = False
             
             while not transaction_successful:
-                print_step("Accounts List Displayed")
-                print_step("Enter Amount -> Withdrawal Amount Provided")
+                print("\n[Step] Displaying Accounts List:")
+                print("1. Checkings ending in 3456")
+                print("2. Savings ending in 0987")
+
+                _ = input("Input: Choose an Account to withdraw from (1 or 2): ").strip()
+
+                # "Prompt to enter Amount and accept input"
+                _ = input("Input: Enter Amount to withdraw: ")
+
                 print_step("Check Account Balance")
                 
                 has_funds = get_user_decision("Are there enough funds in the account?")
